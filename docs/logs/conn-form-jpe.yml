@@ -1,0 +1,352 @@
+- generic [ref=e1]:
+  - generic [ref=e9]:
+    - list [ref=e11]:
+      - listitem
+      - listitem
+      - listitem [ref=e12]:
+        - generic [ref=e14] [cursor=pointer]: メイン コンテンツにスキップ
+    - banner [ref=e18]:
+      - generic [ref=e19]:
+        - button "アプリ起動ツール" [ref=e21] [cursor=pointer]:
+          - img [ref=e24]
+        - link "Fabric" [ref=e27]
+        - generic [ref=e29]:
+          - menuitem "diaglakehouse - DiagWorkspace" [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]:
+              - generic [ref=e35]:
+                - img [ref=e39]
+                - generic [ref=e41]: "7"
+              - generic [ref=e43]: diaglakehouse
+            - button "閉じる" [ref=e44]:
+              - img [ref=e46]
+          - menuitem "manufacturing_lakehouse - ShareWorkspace" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]:
+              - generic [ref=e53]:
+                - img [ref=e57]
+                - generic [ref=e59]: "8"
+              - generic [ref=e61]: manufacturing_lakehouse
+            - button "閉じる" [ref=e62]:
+              - img [ref=e64]
+          - menuitem "StagingLakehouseForDataflows_20260417053449 - ShareWorkspace" [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]:
+              - generic [ref=e71]:
+                - img [ref=e75]
+                - generic [ref=e77]: "8"
+              - generic [ref=e79]: StagingLakehouseForDataflows_20260417053449
+            - button "閉じる" [ref=e80]:
+              - img [ref=e82]
+          - menuitem "StagingWarehouseForDataflows_20260417053501 - ShareWorkspace" [ref=e86] [cursor=pointer]:
+            - generic [ref=e87]:
+              - generic [ref=e89]:
+                - img [ref=e93]
+                - generic [ref=e95]: "8"
+              - generic [ref=e97]: StagingWarehouseForDataflows_20260417053501
+            - button "閉じる" [ref=e98]:
+              - img [ref=e100]
+          - menuitem "sample_warehouse - ShareWorkspace" [ref=e104] [cursor=pointer]:
+            - generic [ref=e105]:
+              - generic [ref=e107]:
+                - img [ref=e111]
+                - generic [ref=e113]: "8"
+              - generic [ref=e115]: sample_warehouse
+            - button "閉じる" [ref=e116]:
+              - img [ref=e118]
+      - generic [ref=e120]:
+        - button "検索" [ref=e122] [cursor=pointer]:
+          - img [ref=e124]
+        - button "設定" [ref=e128] [cursor=pointer]:
+          - img [ref=e131]
+        - button "のアカウント マネージャー" [ref=e136] [cursor=pointer]:
+          - generic [ref=e138]:
+            - text: 
+            - img
+    - generic [ref=e146]:
+      - navigation [ref=e149]:
+        - menu "サイドバー" [ref=e150]:
+          - generic [ref=e151]:
+            - menuitem "ホーム" [ref=e153] [cursor=pointer]:
+              - generic [ref=e154]:
+                - img [ref=e156]
+                - generic [ref=e158]: ホーム
+            - menuitem "ワークスペース" [ref=e161] [cursor=pointer]:
+              - generic [ref=e162]:
+                - img [ref=e164]
+                - generic [ref=e166]: ワークスペース
+            - separator [ref=e167]
+            - menuitem "ShareWorkspace" [ref=e170] [cursor=pointer]:
+              - generic [ref=e171]:
+                - button [ref=e172]:
+                  - generic "閉じる" [ref=e173]:
+                    - img [ref=e175]
+                - generic [ref=e177]:
+                  - img [ref=e181]
+                  - generic [ref=e183]: "8"
+                - generic [ref=e184]: ShareWorkspace
+            - menuitem "DiagWorkspace" [ref=e187] [cursor=pointer]:
+              - generic [ref=e188]:
+                - button [ref=e189]:
+                  - generic "閉じる" [ref=e190]:
+                    - img [ref=e192]
+                - generic [ref=e194]:
+                  - img [ref=e198]
+                  - generic [ref=e200]: "7"
+                - generic [ref=e201]: DiagWorkspace
+            - menuitem "demo-manufacturing-20260318-182347" [ref=e204] [cursor=pointer]:
+              - generic [ref=e205]:
+                - button [ref=e206]:
+                  - generic "閉じる" [ref=e207]:
+                    - img [ref=e209]
+                - generic [ref=e211]:
+                  - img [ref=e215]
+                  - generic [ref=e217]: "6"
+                - generic [ref=e218]: demo-manufacturing-20260318-182347
+            - menuitem "demo-manufacturing-20260318-225029" [ref=e221] [cursor=pointer]:
+              - generic [ref=e222]:
+                - button [ref=e223]:
+                  - generic "閉じる" [ref=e224]:
+                    - img [ref=e226]
+                - generic [ref=e228]:
+                  - img [ref=e232]
+                  - generic [ref=e234]: "5"
+                - generic [ref=e235]: demo-manufacturing-20260318-225029
+            - menuitem "demo-university-ir-20260310" [ref=e238] [cursor=pointer]:
+              - generic [ref=e239]:
+                - button [ref=e240]:
+                  - generic "閉じる" [ref=e241]:
+                    - img [ref=e243]
+                - generic [ref=e245]:
+                  - img [ref=e249]
+                  - generic [ref=e251]: "4"
+                - generic [ref=e252]: demo-university-ir-20260310
+            - menuitem "BasicHandson" [ref=e255] [cursor=pointer]:
+              - generic [ref=e256]:
+                - button [ref=e257]:
+                  - generic "閉じる" [ref=e258]:
+                    - img [ref=e260]
+                - generic [ref=e262]:
+                  - img [ref=e266]
+                  - generic [ref=e268]: "3"
+                - generic [ref=e269]: BasicHandson
+            - menuitem "SQLServerMirror" [ref=e272] [cursor=pointer]:
+              - generic [ref=e273]:
+                - button [ref=e274]:
+                  - generic "閉じる" [ref=e275]:
+                    - img [ref=e277]
+                - generic [ref=e279]:
+                  - img [ref=e283]
+                  - generic [ref=e285]: "2"
+                - generic [ref=e286]: SQLServerMirror
+            - menuitem "SQLServerMirror-20260420" [ref=e289] [cursor=pointer]:
+              - generic [ref=e290]:
+                - button [ref=e291]:
+                  - generic "閉じる" [ref=e292]:
+                    - img [ref=e294]
+                - generic [ref=e296]:
+                  - img [ref=e300]
+                  - generic [ref=e302]: "1"
+                - generic [ref=e303]: SQLServerMirror-20260420
+            - menuitem "マイ ワークスペース" [ref=e306] [cursor=pointer]:
+              - generic [ref=e307]:
+                - button [ref=e308]:
+                  - generic "閉じる" [ref=e309]:
+                    - img [ref=e311]
+                - img [ref=e317]
+                - generic [ref=e319]: マイ ワークスペース
+            - menuitem "その他のオプション" [ref=e322] [cursor=pointer]:
+              - img [ref=e325]
+          - menuitem "Fabric" [ref=e330] [cursor=pointer]:
+            - generic [ref=e333]: Fabric
+      - main [ref=e335]:
+        - generic [ref=e341]:
+          - banner [ref=e342]:
+            - generic [ref=e343]:
+              - generic [ref=e348]:
+                - heading "SQLServerMirror-20260420" [level=1] [ref=e349]
+                - img "ファブリック コンテンツ" [ref=e351]:
+                  - img [ref=e352]
+              - generic:
+                - generic:
+                  - generic:
+                    - paragraph
+              - generic [ref=e354]:
+                - button "アプリの作成" [ref=e355] [cursor=pointer]:
+                  - img [ref=e358]
+                  - generic [ref=e360]: アプリの作成
+                - button "アクセスの管理" [ref=e361] [cursor=pointer]:
+                  - img [ref=e364]
+                  - generic [ref=e366]: アクセスの管理
+                - button "ワークスペースの設定" [ref=e367] [cursor=pointer]:
+                  - img [ref=e370]
+                  - generic [ref=e372]: ワークスペースの設定
+            - generic [ref=e374]:
+              - toolbar "SQLServerMirror-20260420" [ref=e375]:
+                - button "新しい項目" [ref=e376] [cursor=pointer]:
+                  - img [ref=e378]
+                  - generic [ref=e380]: 新しい項目
+                - button "新しいフォルダー" [ref=e381] [cursor=pointer]:
+                  - img [ref=e383]
+                  - generic [ref=e385]: 新しいフォルダー
+                - button "インポート" [ref=e388] [cursor=pointer]:
+                  - img [ref=e390]
+                  - generic [ref=e392]: インポート
+                  - img [ref=e394]
+                - button "移行" [ref=e396] [cursor=pointer]:
+                  - img [ref=e398]
+                  - generic [ref=e400]: 移行
+              - generic [ref=e402]:
+                - generic [ref=e403]:
+                  - img [ref=e405]
+                  - textbox "結果は入力ごとに更新されます。" [disabled] [ref=e407]:
+                    - /placeholder: キーワードでフィルターする
+                - button "フィルター" [disabled] [ref=e410]:
+                  - img [ref=e412]
+                  - generic [ref=e414]: フィルター
+                  - img [ref=e416]
+              - generic [ref=e419]:
+                - button "リスト ビュー" [ref=e420] [cursor=pointer]:
+                  - img [ref=e423]
+                - button "データ系列ビュー" [ref=e425] [cursor=pointer]:
+                  - img [ref=e428]
+                - status [ref=e430]: リスト ビュー ボタンが選択されました
+          - main [ref=e432]:
+            - generic [ref=e434]:
+              - generic [ref=e438]:
+                - generic [ref=e444]:
+                  - generic [ref=e445]: 事前に設計されたタスク フローを選択するか、タスクを追加してそれを作成する
+                  - generic [ref=e446]: Microsoft が事前に設計したタスク フローのいずれかを選択するか、タスクを追加して独自のタスク フローの作成を開始します。
+                - generic [ref=e447]:
+                  - generic [ref=e448]:
+                    - button "事前に設計されたタスク フローを選択する" [ref=e449] [cursor=pointer]:
+                      - img [ref=e451]
+                      - generic [ref=e453]: 事前に設計されたタスク フローを選択する
+                    - button "タスクの追加" [ref=e454] [cursor=pointer]:
+                      - img [ref=e457]
+                      - generic [ref=e459]: タスクの追加
+                      - img [ref=e461]
+                  - button "タスク フローのインポート" [ref=e464] [cursor=pointer]:
+                    - img [ref=e467]
+                    - generic [ref=e469]: タスク フローのインポート
+              - generic [ref=e470]:
+                - button "タスク フロー キャンバスのサイズを変更するには、バーを上下にドラッグします。" [ref=e471] [cursor=pointer]:
+                  - img [ref=e473]
+                - button "タスク フローを非表示にし、項目の一覧全体を表示する場合に選択します。" [ref=e475] [cursor=pointer]:
+                  - img [ref=e477]
+              - region "List" [ref=e479]:
+                - main [ref=e480]:
+                  - generic [ref=e483]:
+                    - tabpanel
+                    - generic [ref=e484]:
+                      - heading "ここにはまだ何もありません。" [level=1] [ref=e486]
+                      - heading "新しいものを追加するか、アップロードしてここに表示します。" [level=2] [ref=e487]
+                    - status [ref=e489]: 0 個の項目を表示中
+  - dialog [ref=e1723]:
+    - iframe [active] [ref=e1725]:
+      - iframe [active] [ref=f87e8]:
+        - generic [ref=f88e1]:
+          - generic [ref=f88e5]:
+            - generic [ref=f88e6]:
+              - generic [ref=f88e10]:
+                - generic:  
+              - dialog [ref=f88e23]
+            - generic:
+              - dialog
+          - iframe [active] [ref=f88e45]:
+            - generic [ref=f92e8]:
+              - generic [ref=f92e103]:
+                - generic [ref=f92e104]:
+                  - heading "新しいミラー化 SQL Server" [level=1] [ref=f92e106]
+                  - heading "新しいソース" [level=2] [ref=f92e108]
+                - button "閉じる" [ref=f92e110] [cursor=pointer]:
+                  - img [ref=f92e113]
+              - generic [ref=f92e116]:
+                - generic [ref=f92e117]:
+                  - generic [ref=f92e118]:
+                    - img [ref=f92e121]
+                    - generic [ref=f92e125]:
+                      - generic [ref=f92e127]: SQL Server データベース
+                      - generic [ref=f92e129]: データベース
+                  - link "詳細情報" [ref=f92e130] [cursor=pointer]:
+                    - /url: https://go.microsoft.com/fwlink/?linkid=2235405
+                - generic [ref=f92e131]:
+                  - generic [ref=f92e132]:
+                    - heading "接続設定" [level=3] [ref=f92e133]
+                    - generic [ref=f92e136]:
+                      - generic [ref=f92e137]:
+                        - generic [ref=f92e138]:
+                          - generic [ref=f92e139]: サーバー *
+                          - button "サーバー の追加情報 (SERVER:PORT の形式を使用して、接続先のサーバーを指定してください。ポート番号は省略可能です。)" [ref=f92e140] [cursor=pointer]:
+                            - generic [ref=f92e142]: 
+                        - textbox "サーバー *" [ref=f92e149]:
+                          - /placeholder: "例: test.corp.contoso.com"
+                      - generic [ref=f92e150]:
+                        - generic [ref=f92e152]: データベース
+                        - textbox "データベース" [ref=f92e159]:
+                          - /placeholder: "例: Contoso_DB"
+                  - generic [ref=f92e160]:
+                    - heading "接続の資格情報" [level=3] [ref=f92e161]
+                    - generic [ref=f92e162]:
+                      - generic [ref=f92e164]:
+                        - generic [ref=f92e165]:
+                          - generic [ref=f92e167]: 接続
+                          - combobox "接続" [ref=f92e168]:
+                            - generic [ref=f92e169] [cursor=pointer]: 新しい接続の作成
+                            - generic [ref=f92e170] [cursor=pointer]:
+                              - generic: 
+                        - button "接続の更新" [ref=f92e173] [cursor=pointer]:
+                          - img [ref=f92e176]
+                      - generic [ref=f92e179]:
+                        - generic [ref=f92e181]: 接続名
+                        - textbox "接続名" [ref=f92e186]:
+                          - /placeholder: 接続 admin
+                          - text: 接続
+                      - generic [ref=f92e187]:
+                        - generic [ref=f92e189]:
+                          - generic [ref=f92e190]:
+                            - generic [ref=f92e192]: データ ゲートウェイ
+                            - combobox "データ ゲートウェイ" [ref=f92e193]:
+                              - generic [ref=f92e194] [cursor=pointer]: (なし)
+                              - generic [ref=f92e195] [cursor=pointer]:
+                                - generic: 
+                          - button "ゲートウェイを更新する" [ref=f92e198] [cursor=pointer]:
+                            - img [ref=f92e201]
+                        - generic [ref=f92e204]:
+                          - generic [ref=f92e208]:
+                            - generic [ref=f92e210]: 認証の種類
+                            - combobox "認証の種類" [ref=f92e211]:
+                              - generic [ref=f92e212] [cursor=pointer]: 基本
+                              - generic [ref=f92e213] [cursor=pointer]:
+                                - generic: 
+                          - generic [ref=f92e214]:
+                            - generic [ref=f92e215]:
+                              - generic [ref=f92e217]: ユーザー名
+                              - textbox "ユーザー名" [ref=f92e222]
+                            - generic [ref=f92e223]:
+                              - generic [ref=f92e224]:
+                                - generic [ref=f92e226]: パスワード
+                                - textbox "パスワード" [ref=f92e231]
+                              - generic [ref=f92e233]:
+                                - generic [ref=f92e234]: 
+                                - generic [ref=f92e235]: Azure Key Vault を使用する
+                                - img [ref=f92e236]: 
+                        - generic [ref=f92e237]:
+                          - generic [ref=f92e242]:
+                            - generic [ref=f92e244]: プライバシー レベル
+                            - combobox "プライバシー レベル" [ref=f92e245]:
+                              - generic [ref=f92e246] [cursor=pointer]: なし
+                              - generic [ref=f92e247] [cursor=pointer]:
+                                - generic: 
+                          - generic [ref=f92e249]:
+                            - checkbox "暗号化された接続を使用する" [checked] [ref=f92e250]
+                            - generic [ref=f92e251] [cursor=pointer]:
+                              - generic [ref=f92e253]: 
+                              - generic [ref=f92e254]: 暗号化された接続を使用する
+                          - generic [ref=f92e256]:
+                            - checkbox "この接続は、オンプレミスのデータ ゲートウェイと VNet データ ゲートウェイで使用できます。" [ref=f92e257]
+                            - generic [ref=f92e258] [cursor=pointer]:
+                              - generic [ref=f92e260]: 
+                              - generic [ref=f92e261]: この接続は、オンプレミスのデータ ゲートウェイと VNet データ ゲートウェイで使用できます。
+              - generic [ref=f92e264]:
+                - button "戻る" [ref=f92e265] [cursor=pointer]:
+                  - generic [ref=f92e268]: 戻る
+                - button "接続" [disabled] [ref=f92e269]:
+                  - generic [ref=f92e272]: 接続

@@ -1,0 +1,314 @@
+- generic [ref=e9]:
+  - list [ref=e11]:
+    - listitem
+    - listitem
+    - listitem [ref=e12]:
+      - generic [ref=e14] [cursor=pointer]: メイン コンテンツにスキップ
+  - banner [ref=e18]:
+    - generic [ref=e19]:
+      - button "アプリ起動ツール" [ref=e21] [cursor=pointer]:
+        - img [ref=e24]
+      - link "Fabric" [ref=e1727]
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - menuitem "diaglakehouse - DiagWorkspace" [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]:
+              - generic [ref=e35]:
+                - img [ref=e39]
+                - generic [ref=e41]: "7"
+              - generic [ref=e43]: diaglakehouse
+            - button "閉じる" [ref=e44]:
+              - img [ref=e46]
+          - menuitem "manufacturing_lakehouse - ShareWorkspace" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]:
+              - generic [ref=e53]:
+                - img [ref=e57]
+                - generic [ref=e59]: "8"
+              - generic [ref=e61]: manufacturing_lakehouse
+            - button "閉じる" [ref=e62]:
+              - img [ref=e64]
+          - menuitem "StagingLakehouseForDataflows_20260417053449 - ShareWorkspace" [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]:
+              - generic [ref=e71]:
+                - img [ref=e75]
+                - generic [ref=e77]: "8"
+              - generic [ref=e79]: StagingLakehouseForDataflows_20260417053449
+            - button "閉じる" [ref=e80]:
+              - img [ref=e82]
+          - menuitem "StagingWarehouseForDataflows_20260417053501 - ShareWorkspace" [ref=e86] [cursor=pointer]:
+            - generic [ref=e87]:
+              - generic [ref=e89]:
+                - img [ref=e93]
+                - generic [ref=e95]: "8"
+              - generic [ref=e97]: StagingWarehouseForDataflows_20260417053501
+            - button "閉じる" [ref=e98]:
+              - img [ref=e100]
+          - menuitem "sample_warehouse - ShareWorkspace" [ref=e104] [cursor=pointer]:
+            - generic [ref=e105]:
+              - generic [ref=e107]:
+                - img [ref=e111]
+                - generic [ref=e113]: "8"
+              - generic [ref=e115]: sample_warehouse
+            - button "閉じる" [ref=e116]:
+              - img [ref=e118]
+          - menuitem "AdventureWorksLT2022 - SQLServerMirror-20260420" [ref=e1730] [cursor=pointer]:
+            - generic [ref=e1731]:
+              - generic [ref=e1733]:
+                - img [ref=e1737]
+                - generic [ref=e1739]: "1"
+              - generic [ref=e1741]: AdventureWorksLT2022
+            - button "閉じる" [ref=e1742]:
+              - img [ref=e1744]
+        - button "すべてのタブ" [ref=e1746] [cursor=pointer]:
+          - img [ref=e1749]
+      - button "AdventureWorksLT2022" [ref=e1752] [cursor=pointer]:
+        - img [ref=e1753]: 
+    - generic [ref=e120]:
+      - button "検索" [ref=e122] [cursor=pointer]:
+        - img [ref=e124]
+      - button "設定" [ref=e128] [cursor=pointer]:
+        - img [ref=e131]
+      - button "のアカウント マネージャー" [ref=e136] [cursor=pointer]:
+        - generic [ref=e138]:
+          - text: 
+          - img
+  - generic [ref=e146]:
+    - navigation [ref=e149]:
+      - menu "サイドバー" [ref=e150]:
+        - generic [ref=e151]:
+          - menuitem "ホーム" [ref=e153] [cursor=pointer]:
+            - generic [ref=e154]:
+              - img [ref=e156]
+              - generic [ref=e158]: ホーム
+          - menuitem "ワークスペース" [ref=e161] [cursor=pointer]:
+            - generic [ref=e162]:
+              - img [ref=e164]
+              - generic [ref=e166]: ワークスペース
+          - separator [ref=e167]
+          - menuitem "ShareWorkspace" [ref=e170] [cursor=pointer]:
+            - generic [ref=e171]:
+              - button [ref=e172]:
+                - generic "閉じる" [ref=e173]:
+                  - img [ref=e175]
+              - generic [ref=e177]:
+                - img [ref=e181]
+                - generic [ref=e183]: "8"
+              - generic [ref=e184]: ShareWorkspace
+          - menuitem "DiagWorkspace" [ref=e187] [cursor=pointer]:
+            - generic [ref=e188]:
+              - button [ref=e189]:
+                - generic "閉じる" [ref=e190]:
+                  - img [ref=e192]
+              - generic [ref=e194]:
+                - img [ref=e198]
+                - generic [ref=e200]: "7"
+              - generic [ref=e201]: DiagWorkspace
+          - menuitem "demo-manufacturing-20260318-182347" [ref=e204] [cursor=pointer]:
+            - generic [ref=e205]:
+              - button [ref=e206]:
+                - generic "閉じる" [ref=e207]:
+                  - img [ref=e209]
+              - generic [ref=e211]:
+                - img [ref=e215]
+                - generic [ref=e217]: "6"
+              - generic [ref=e218]: demo-manufacturing-20260318-182347
+          - menuitem "demo-manufacturing-20260318-225029" [ref=e221] [cursor=pointer]:
+            - generic [ref=e222]:
+              - button [ref=e223]:
+                - generic "閉じる" [ref=e224]:
+                  - img [ref=e226]
+              - generic [ref=e228]:
+                - img [ref=e232]
+                - generic [ref=e234]: "5"
+              - generic [ref=e235]: demo-manufacturing-20260318-225029
+          - menuitem "demo-university-ir-20260310" [ref=e238] [cursor=pointer]:
+            - generic [ref=e239]:
+              - button [ref=e240]:
+                - generic "閉じる" [ref=e241]:
+                  - img [ref=e243]
+              - generic [ref=e245]:
+                - img [ref=e249]
+                - generic [ref=e251]: "4"
+              - generic [ref=e252]: demo-university-ir-20260310
+          - menuitem "BasicHandson" [ref=e255] [cursor=pointer]:
+            - generic [ref=e256]:
+              - button [ref=e257]:
+                - generic "閉じる" [ref=e258]:
+                  - img [ref=e260]
+              - generic [ref=e262]:
+                - img [ref=e266]
+                - generic [ref=e268]: "3"
+              - generic [ref=e269]: BasicHandson
+          - menuitem "SQLServerMirror" [ref=e272] [cursor=pointer]:
+            - generic [ref=e273]:
+              - button [ref=e274]:
+                - generic "閉じる" [ref=e275]:
+                  - img [ref=e277]
+              - generic [ref=e279]:
+                - img [ref=e283]
+                - generic [ref=e285]: "2"
+              - generic [ref=e286]: SQLServerMirror
+          - menuitem "SQLServerMirror-20260420" [ref=e289] [cursor=pointer]:
+            - generic [ref=e290]:
+              - button [ref=e291]:
+                - generic "閉じる" [ref=e292]:
+                  - img [ref=e294]
+              - generic [ref=e296]:
+                - img [ref=e300]
+                - generic [ref=e302]: "1"
+              - generic [ref=e303]: SQLServerMirror-20260420
+          - menuitem "マイ ワークスペース" [ref=e306] [cursor=pointer]:
+            - generic [ref=e307]:
+              - button [ref=e308]:
+                - generic "閉じる" [ref=e309]:
+                  - img [ref=e311]
+              - img [ref=e317]
+              - generic [ref=e319]: マイ ワークスペース
+          - menuitem "その他のオプション" [ref=e322] [cursor=pointer]:
+            - img [ref=e325]
+        - menuitem "Fabric" [ref=e330] [cursor=pointer]:
+          - generic [ref=e333]: Fabric
+    - main [ref=e335]:
+      - iframe [ref=e1756]:
+        - generic [ref=f112e6]:
+          - toolbar "リボン" [ref=f112e7]:
+            - generic [ref=f112e11]:
+              - toolbar [ref=f112e12]:
+                - tablist "リボン タブ" [ref=f112e14]:
+                  - tab "Home" [selected] [ref=f112e16] [cursor=pointer]:
+                    - generic [ref=f112e17]: Home
+              - generic [ref=f112e20]:
+                - button "ミラー化されたデータベース" [ref=f112e21]:
+                  - img [ref=f112e24]
+                  - text: ミラー化されたデータベース
+                  - img [ref=f112e34]
+                - button "共有" [ref=f112e36]:
+                  - img [ref=f112e38]
+                  - generic [ref=f112e40]: 共有
+            - toolbar [ref=f112e41]:
+              - tabpanel "Home" [ref=f112e43]:
+                - generic [ref=f112e51]:
+                  - group "ホーム" [ref=f112e55]:
+                    - button "最新の情報に更新" [ref=f112e56]:
+                      - img [ref=f112e59]
+                    - button "設定" [ref=f112e63]:
+                      - img [ref=f112e66]
+                  - group "actions" [ref=f112e74]:
+                    - button "レプリケーションの停止" [ref=f112e267]:
+                      - generic [ref=f112e269]: 
+                      - generic [ref=f112e270]: レプリケーションの停止
+                  - group "actions" [ref=f112e80]:
+                    - button "レプリケーションの構成" [ref=f112e271]:
+                      - img [ref=f112e274]
+                      - generic [ref=f112e278]: レプリケーションの構成
+                    - button "OneLake セキュリティの管理" [ref=f112e81]:
+                      - img [ref=f112e84]
+                      - generic [ref=f112e86]: OneLake セキュリティの管理
+          - region [ref=f112e90]:
+            - generic [ref=f112e91]:
+              - generic [ref=f112e93]: 
+              - status [ref=f112e94]:
+                - generic [ref=f112e95]: SQL クエリ用の SQL 分析エンドポイントとレポート作成用の既定の Power BI セマンティック モデルがこの項目を使用して作成されました。
+              - button [ref=f112e96] [cursor=pointer]:
+                - generic [ref=f112e98]: 
+          - generic [ref=f112e100]:
+            - generic [ref=f112e101]:
+              - generic [ref=f112e102]:
+                - generic [ref=f112e103]: エクスプローラー
+                - img [ref=f112e104] [cursor=pointer]
+              - generic [ref=f112e106]:
+                - img [ref=f112e108]
+                - searchbox "検索" [ref=f112e110]
+                - generic:
+                  - button "clear":
+                    - img [ref=f112e111] [cursor=pointer]
+              - generic [ref=f112e114] [cursor=pointer]: レプリケーションの状態
+              - tree "エクスプローラー" [ref=f112e115]:
+                - treeitem "AdventureWorksLT2022 AdventureWorksLT2022" [expanded] [level=1] [ref=f112e116] [cursor=pointer]:
+                  - generic [ref=f112e117]:
+                    - img [ref=f112e119]
+                    - generic [ref=f112e121]: AdventureWorksLT2022
+                  - group "AdventureWorksLT2022" [ref=f112e122]:
+                    - treeitem "OneLake のテーブル AdventureWorksLT2022 OneLake のテーブル" [expanded] [level=2] [ref=f112e123]:
+                      - generic [ref=f112e124]:
+                        - img [ref=f112e126]
+                        - img [ref=f112e129]
+                        - button "OneLake のテーブル" [ref=f112e132]
+                      - group "AdventureWorksLT2022 OneLake のテーブル" [ref=f112e133]
+            - generic [ref=f112e135]:
+              - tablist [ref=f112e136]:
+                - generic [ref=f112e140] [cursor=pointer]:
+                  - img [ref=f112e142]
+                  - generic [ref=f112e144]: レプリケーションの状態
+              - generic [ref=f112e147]:
+                - generic [ref=f112e148]:
+                  - generic [ref=f112e149]:
+                    - generic [ref=f112e150]: AdventureWorksLT2022 の詳細
+                    - generic [ref=f112e151]:
+                      - generic [ref=f112e152]:
+                        - img [ref=f112e154]
+                        - generic [ref=f112e163]:
+                          - generic [ref=f112e164]: ミラー化されたデータベース ID
+                          - generic [ref=f112e165]:
+                            - generic [ref=f112e166]: fc59b7e1-79f8-441d-a0c8-b6c66caecae2
+                            - button [ref=f112e167] [cursor=pointer]:
+                              - generic [ref=f112e169]: 
+                      - generic [ref=f112e170]:
+                        - img [ref=f112e172]
+                        - generic [ref=f112e175]:
+                          - generic [ref=f112e176]: ソース
+                          - generic [ref=f112e178]: SQL Server
+                      - generic [ref=f112e179]:
+                        - img [ref=f112e181]
+                        - generic [ref=f112e184]:
+                          - generic [ref=f112e185]: ソースになる接続
+                          - generic [ref=f112e186]:
+                            - generic [ref=f112e188]: localhost,1433;AdventureWorksLT2022
+                            - generic [ref=f112e189]:
+                              - generic [ref=f112e190]: 562a8f9d-c0f4-447c-bb04-64c3b42869ed
+                              - button [ref=f112e191] [cursor=pointer]:
+                                - generic [ref=f112e193]: 
+                  - generic [ref=f112e194]:
+                    - img [ref=f112e196]
+                    - generic [ref=f112e203]:
+                      - generic [ref=f112e204]: セマンティック モデルを作成する
+                      - generic [ref=f112e205]: ミラー化されたデータを使用して、Power BI レポート用の新しいセマンティック モデルを作成します。
+                      - button "セマンティック モデルの作成" [ref=f112e206] [cursor=pointer]:
+                        - generic [ref=f112e209]: セマンティック モデルの作成
+                  - generic [ref=f112e210]:
+                    - img [ref=f112e212]
+                    - generic [ref=f112e221]:
+                      - generic [ref=f112e222]: このデータにクエリを実行する
+                      - generic [ref=f112e223]: T-SQL を使用して、ミラー化されたデータのクエリと分析を行います。
+                      - button "T-SQL でのクエリ" [ref=f112e224] [cursor=pointer]:
+                        - generic [ref=f112e227]: T-SQL でのクエリ
+                - generic [ref=f112e228]:
+                  - generic [ref=f112e229]:
+                    - heading "レプリケーションの監視" [level=1] [ref=f112e230]
+                    - paragraph [ref=f112e231]:
+                      - text: こちらはソースからのテーブルです。レプリケーションが完了すると、ミラー化された項目の SQL 分析エンドポイントにテーブルが同期されます。 また、ワークスペース監視とミラー化されたデータベース操作ログを併用すると、より深いインサイトを得て、プロアクティブな監視が可能になります。
+                      - link "詳細情報" [ref=f112e232] [cursor=pointer]:
+                        - /url: https://aka.ms/mirroring/monitor
+                    - generic [ref=f112e234]:
+                      - generic [ref=f112e235]: 状態
+                      - generic [ref=f112e236]:
+                        - generic [ref=f112e237]: 
+                        - generic [ref=f112e238]: 実行中
+                  - generic [ref=f112e239]:
+                    - generic [ref=f112e240]:
+                      - button "最新の情報に更新" [ref=f112e241] [cursor=pointer]:
+                        - generic [ref=f112e242]:
+                          - generic [ref=f112e243]: 
+                          - generic [ref=f112e245]: 最新の情報に更新
+                      - generic [ref=f112e246]:
+                        - generic [ref=f112e247]:
+                          - generic [ref=f112e249]: 
+                          - searchbox "キーワードでフィルターする" [ref=f112e250]
+                        - button "フィルター メニュー" [ref=f112e251]:
+                          - img [ref=f112e253]
+                          - text: フィルター
+                          - img [ref=f112e256]
+                    - generic [ref=f112e261]:
+                      - img [ref=f112e263]
+                      - heading "データが着信していません" [level=2] [ref=f112e265]
+                      - text: データが着信すると、 OneLake でデータとレプリケーションの状態がここに表示されます。

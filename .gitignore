@@ -1,0 +1,26 @@
+# VS Code
+.vscode/
+
+# Playwright MCP
+.playwright-mcp/
+
+# Azure env (contains secrets)
+scripts/.azure-env.ps1
+
+# Deploy state
+.last-deploy
+
+# .NET build outputs
+functions/bin/
+functions/obj/
+
+# Local settings (may contain connection strings)
+functions/local.settings.json
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Backup file (too large for git)
+scripts/AdventureWorksLT2022.bak

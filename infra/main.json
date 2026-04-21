@@ -1,0 +1,313 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.32.4.45862",
+      "templateHash": "4476117401629015578"
+    }
+  },
+  "parameters": {
+    "namePrefix": {
+      "type": "string",
+      "defaultValue": "sqlmirror",
+      "metadata": {
+        "description": "Resource name prefix"
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Azure region"
+      }
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_D2s_v5",
+      "metadata": {
+        "description": "VM size"
+      }
+    },
+    "adminUsername": {
+      "type": "string",
+      "defaultValue": "azureuser",
+      "metadata": {
+        "description": "Local Windows admin username"
+      }
+    },
+    "adminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Local Windows admin password"
+      }
+    },
+    "sqlAuthLogin": {
+      "type": "string",
+      "defaultValue": "fabric_login",
+      "metadata": {
+        "description": "SQL Server SQL auth login (used by Fabric)"
+      }
+    },
+    "sqlAuthPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Password for sqlAuthLogin"
+      }
+    },
+    "allowedSourceCidr": {
+      "type": "string",
+      "defaultValue": "*",
+      "metadata": {
+        "description": "Public IP allowed for inbound RDP. Use your client IP/CIDR. * = any (demo only)"
+      }
+    },
+    "sqlPort": {
+      "type": "int",
+      "defaultValue": 1433,
+      "metadata": {
+        "description": "SQL TCP port (Fabric reaches SQL via VNet DG over private IP, so 1433 is fine)."
+      }
+    }
+  },
+  "variables": {
+    "vnetName": "[format('{0}-vnet', parameters('namePrefix'))]",
+    "subnetVm": "sql-subnet",
+    "subnetGateway": "gateway-subnet",
+    "nsgName": "[format('{0}-nsg', parameters('namePrefix'))]",
+    "pipName": "[format('{0}-pip', parameters('namePrefix'))]",
+    "nicName": "[format('{0}-nic', parameters('namePrefix'))]",
+    "vmName": "[format('{0}-vm', parameters('namePrefix'))]",
+    "dnsLabel": "[toLower(format('{0}-{1}', parameters('namePrefix'), uniqueString(resourceGroup().id)))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2024-05-01",
+      "name": "[variables('nsgName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "AllowRDP",
+            "properties": {
+              "priority": 1000,
+              "access": "Allow",
+              "direction": "Inbound",
+              "protocol": "Tcp",
+              "sourceAddressPrefix": "[parameters('allowedSourceCidr')]",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
+            }
+          },
+          {
+            "name": "AllowSQL-FromVNet",
+            "properties": {
+              "priority": 1010,
+              "access": "Allow",
+              "direction": "Inbound",
+              "protocol": "Tcp",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "[string(parameters('sqlPort'))]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2024-05-01",
+      "name": "[variables('vnetName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.30.0.0/16"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('subnetVm')]",
+            "properties": {
+              "addressPrefix": "10.30.1.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+              }
+            }
+          },
+          {
+            "name": "[variables('subnetGateway')]",
+            "properties": {
+              "addressPrefix": "10.30.2.0/24",
+              "delegations": [
+                {
+                  "name": "pp-delegation",
+                  "properties": {
+                    "serviceName": "Microsoft.PowerPlatform/vnetaccesslinks"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2024-05-01",
+      "name": "[variables('pipName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Static",
+        "dnsSettings": {
+          "domainNameLabel": "[variables('dnsLabel')]"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2024-05-01",
+      "name": "[variables('nicName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "subnet": {
+                "id": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vnetName')), '2024-05-01').subnets[0].id]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('pipName'))]"
+              },
+              "privateIPAllocationMethod": "Dynamic"
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', variables('pipName'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines",
+      "apiVersion": "2024-07-01",
+      "name": "[variables('vmName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "sqlmirrorvm",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]",
+          "windowsConfiguration": {
+            "provisionVMAgent": true,
+            "enableAutomaticUpdates": true
+          }
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "MicrosoftSQLServer",
+            "offer": "sql2022-ws2022",
+            "sku": "sqldev-gen2",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage",
+            "managedDisk": {
+              "storageAccountType": "Premium_LRS"
+            }
+          }
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName'))]"
+            }
+          ]
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.SqlVirtualMachine/sqlVirtualMachines",
+      "apiVersion": "2023-10-01",
+      "name": "[variables('vmName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "virtualMachineResourceId": "[resourceId('Microsoft.Compute/virtualMachines', variables('vmName'))]",
+        "sqlServerLicenseType": "PAYG",
+        "sqlManagement": "Full",
+        "sqlImageSku": "Developer",
+        "sqlImageOffer": "SQL2022-WS2022",
+        "serverConfigurationsManagementSettings": {
+          "sqlConnectivityUpdateSettings": {
+            "connectivityType": "PRIVATE",
+            "port": "[parameters('sqlPort')]",
+            "sqlAuthUpdateUserName": "[parameters('sqlAuthLogin')]",
+            "sqlAuthUpdatePassword": "[parameters('sqlAuthPassword')]"
+          },
+          "additionalFeaturesServerConfigurations": {
+            "isRServicesEnabled": false
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/virtualMachines', variables('vmName'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "vmFqdn": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('pipName')), '2024-05-01').dnsSettings.fqdn]"
+    },
+    "vmPublicIp": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('pipName')), '2024-05-01').ipAddress]"
+    },
+    "vmPrivateIp": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/networkInterfaces', variables('nicName')), '2024-05-01').ipConfigurations[0].properties.privateIPAddress]"
+    },
+    "sqlServerEndpoint": {
+      "type": "string",
+      "value": "[format('{0},{1}', reference(resourceId('Microsoft.Network/publicIPAddresses', variables('pipName')), '2024-05-01').dnsSettings.fqdn, parameters('sqlPort'))]"
+    },
+    "sqlPort": {
+      "type": "int",
+      "value": "[parameters('sqlPort')]"
+    },
+    "sqlAuthLoginName": {
+      "type": "string",
+      "value": "[parameters('sqlAuthLogin')]"
+    },
+    "vnetId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]"
+    },
+    "gatewaySubnetId": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', variables('vnetName')), '2024-05-01').subnets[1].id]"
+    },
+    "gatewaySubnetName": {
+      "type": "string",
+      "value": "[variables('subnetGateway')]"
+    }
+  }
+}
